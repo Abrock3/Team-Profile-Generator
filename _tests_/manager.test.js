@@ -1,5 +1,7 @@
+// bring in the Manager class to be tested
 const Manager = require("../lib/ManagerClass");
 
+// these tests, while basic and probably unnecessary, check that the constructor and prototype functions work
 describe("Manager", () => {
   describe("Initialization", () => {
     it("should set Office Number via constructor arguments", () => {

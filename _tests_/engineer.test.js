@@ -1,5 +1,7 @@
+// bring in the Engineer class to be tested
 const Engineer = require("../lib/EngineerClass");
 
+// these tests, while basic and probably unnecessary, check that the constructor and prototype functions work
 describe("Engineer", () => {
   describe("Initialization", () => {
     it("should set github via constructor arguments", () => {

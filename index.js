@@ -4,7 +4,6 @@ const Intern = require("./lib/InternClass");
 const fs = require("fs");
 const inquirer = require("inquirer");
 const render = require("./src/page-template");
-
 let teamIDs = [];
 const team = {
   manager: null,
@@ -12,6 +11,7 @@ const team = {
   interns: [],
 };
 
+// this function is called upon running node index.js. It asks the user for information about the team's manager
 function createManager() {
   inquirer
     .prompt([
@@ -20,7 +20,8 @@ function createManager() {
         message: "Type the manager's full name here.",
         name: "name",
         validate(answer) {
-          if (!answer || answer.trim().split("").indexOf(" ") === -1) {
+          // this validation will ensure that there's at least one space between two sets of characters in the string
+          if (answer.trim().split("").indexOf(" ") === -1) {
             return "You must type the employee's first and last name in this field.";
           }
           return true;
@@ -31,11 +32,8 @@ function createManager() {
         message: "Type a manager's ID here.",
         name: "id",
         validate(answer) {
-          if (
-            !answer ||
-            parseInt(answer).toString().length !== answer.length ||
-            answer.length !== 4
-          ) {
+          // this validation ensures the response is an integer and 4 characters long
+          if (parseInt(answer) == answer || answer.length !== 4) {
             return "You must type a numeric, 4-digit ID in this field.";
           }
           return true;
@@ -46,6 +44,7 @@ function createManager() {
         message: "Type the manager's email here.",
         name: "email",
         validate(answer) {
+          // this validation ensures that there's at least an @ symbol in the string
           if (!answer || answer.split("").indexOf("@") === -1) {
             return "You must type an email in this field.";
           }
@@ -57,11 +56,7 @@ function createManager() {
         message: "Type the manager's office number here.",
         name: "officeNumber",
         validate(answer) {
-          if (
-            !answer ||
-            parseInt(answer).toString().length !== answer.length ||
-            answer.length !== 3
-          ) {
+          if (!answer || parseInt(answer) !== answer || answer.length !== 3) {
             return "You must type a 3 digit integer in this field.";
           }
           return true;
@@ -81,6 +76,7 @@ function createManager() {
     });
 }
 
+// the code uses inquirer to loop back to this function until the user selects that they don't want to add more
 function createTeam() {
   inquirer
     .prompt([
@@ -129,13 +125,10 @@ function addEngineer() {
         message: "Type an engineer's ID here.",
         name: "id",
         validate(answer) {
-          if (
-            !answer ||
-            parseInt(answer).toString().length !== answer.length ||
-            answer.length !== 4
-          ) {
+          if (parseInt(answer) == answer || answer.length !== 4) {
             return "You must type a numeric, 4-digit ID in this field.";
           }
+          // this validation requires that the ID be unique
           if (teamIDs.includes(answer)) {
             return "This ID has already been used.";
           }
@@ -197,11 +190,7 @@ function addIntern() {
         message: "Type an intern's ID here.",
         name: "id",
         validate(answer) {
-          if (
-            !answer ||
-            parseInt(answer).toString().length !== answer.length ||
-            answer.length !== 4
-          ) {
+          if (parseInt(answer) == answer || answer.length !== 4) {
             return "You must type a numeric, 4-digit ID in this field.";
           }
           if (teamIDs.includes(answer)) {
@@ -242,10 +231,13 @@ function addIntern() {
       );
       team.interns.push(intern);
       teamIDs.push(answers.id);
+      // loops back to create a new employee if desired
       createTeam();
     });
 }
 
+// this will use the render function from /src/page-template.js to assemble the HTML, and then will 
+// write that HTML to a file in the dist/ directory
 function buildTeam() {
   fs.writeFile("dist/team.html", render(team), (err) => {
     if (err) {
@@ -253,5 +245,5 @@ function buildTeam() {
     }
   });
 }
-
+// runs on initial execution
 createManager();

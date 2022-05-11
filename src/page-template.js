@@ -1,3 +1,4 @@
+// creates the block of HTML for the manager card that will be inserted into the larger document
 function renderManager(manager) {
   return `
   <div class="card employee-card">
@@ -15,7 +16,7 @@ function renderManager(manager) {
 </div>
   `;
 }
-
+// creates the block of HTML for the engineer cards that will be inserted into the larger document
 function renderEngineers(engineers) {
   const markup = engineers.map((engineer) => {
     return `
@@ -35,6 +36,7 @@ function renderEngineers(engineers) {
   });
   return markup.join(",");
 }
+// creates the block of HTML for the intern cards that will be inserted into the larger document
 function renderInterns(interns) {
   const markup = interns.map((intern) => {
     return `
@@ -55,6 +57,7 @@ function renderInterns(interns) {
   return markup.join(",");
 }
 
+// merges all of our dynamic HTML into one string
 function createTeam(team) {
   return `
 ${renderManager(team.manager)}
@@ -62,6 +65,8 @@ ${renderEngineers(team.engineers)}
 ${renderInterns(team.interns)}
   `;
 }
+
+// This constructs the static portion of the HTML around the dynamically generated employee cards
 function render(team) {
   return `
   <!DOCTYPE html>
@@ -96,4 +101,5 @@ function render(team) {
   `;
 }
 
+// exports this for use in index.html
 module.exports = render;

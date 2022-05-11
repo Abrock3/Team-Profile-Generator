@@ -1,13 +1,11 @@
+// Bring in the employee class to be tested
 const Employee = require("../lib/EmployeeClass.js");
 
+// while basic and probably uneccesary, these tests ensure that the constructor and prototype functions work
 describe("Employee", () => {
   describe("Initialization", () => {
     it("should instantiate an Employee instance", () => {
-      //arrange
       const employee = new Employee();
-      //act
-
-      //assert
       expect(typeof employee).toBe("object");
     });
     it("should set name via constructor arguments", () => {
