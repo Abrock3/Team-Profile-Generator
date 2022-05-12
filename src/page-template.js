@@ -27,7 +27,7 @@ function renderEngineers(engineers) {
       </div>
       <div class="card-body">
         <ul class="list-group">
-          <li class="list-group-item">ID: ${engineer.getId()}</li>
+          <li class="list-group-item">ID: ${engineer.getID()}</li>
           <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
           <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a></li>
         </ul>
@@ -47,7 +47,7 @@ function renderInterns(interns) {
       </div>
       <div class="card-body">
         <ul class="list-group">
-          <li class="list-group-item">ID: ${intern.getId()}</li>
+          <li class="list-group-item">ID: ${intern.getID()}</li>
           <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
           <li class="list-group-item">School: ${intern.getSchool()}</li>
         </ul>
