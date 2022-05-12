@@ -32,6 +32,8 @@ Screenshot of the created HTML page:
 Screenshot of the program running in the CLI:
 ![Screenshot](assets\images\screenshot2.jpg?raw=true "Screenshot")
 
+Video of this program functioning: https://drive.google.com/file/d/1JH3eZJg-34zDrsv7RTqPn1gZqKse4V8R/view
+
 ## Testing
 
 This program uses Jest to test that the classes' various attributes and methods function as expected. To run these tests type 'npm run test' in the command line.
