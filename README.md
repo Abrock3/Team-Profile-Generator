@@ -2,9 +2,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-This project allows users that may not be proficient with HTML and CSS to put together a polished page that displays their team's roles and some information about each TM. 
+This project allows users that may not be proficient with HTML and CSS (or may be short on time) to put together a polished page that displays their team's roles and some information about each team member. 
 
-It prompts the user to answer some questions about their team, and upon completion it will output an HTML file, styled with bootstrap, that displays their team's info in an organized, professional fashion.
+It prompts the user to answer some questions about their team, and upon completion it will output a boostrap-styled HTML file that displays their team's info in an organized, professional fashion.
 
 I started out writing this project more as a way to familiarize myself with the usage of object-oriented programming, and to give myself some more exposure to Jest. By no means were they necessary to write this project, but I definitely succeeded in my main goal to learn the basics of each. 
 
@@ -28,6 +28,9 @@ After installation, the user can run the program from the command line using 'no
 
 Screenshot of the created HTML page:
 ![Screenshot](assets\images\screenshot1.jpg?raw=true "Screenshot")
+
+Screenshot of the program running in the CLI:
+![Screenshot](assets\images\screenshot2.jpg?raw=true "Screenshot")
 
 ## Testing
 
