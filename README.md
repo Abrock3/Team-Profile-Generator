@@ -27,10 +27,10 @@ Before use, the user must run npm i from the command line to install the npm pac
 After installation, the user can run the program from the command line using 'node index.js'. The user will be prompted to answer questions about the employees in their organization, and they'll be given as many opportunities as they need to add more employees. Once the user selects that they're done adding new employees, the script will complete and the user will be able to find their new HTML file under ./dist/team.html.
 
 Screenshot of the created HTML page:
-![Screenshot](assets\images\screenshot1.jpg?raw=true "Screenshot")
+![Screenshot](assets/images/screenshot1.jpg?raw=true "Screenshot")
 
 Screenshot of the program running in the CLI:
-![Screenshot](assets\images\screenshot2.jpg?raw=true "Screenshot")
+![Screenshot](assets/images/screenshot2.jpg?raw=true "Screenshot")
 
 Video of this program functioning: https://drive.google.com/file/d/1JH3eZJg-34zDrsv7RTqPn1gZqKse4V8R/view
 
